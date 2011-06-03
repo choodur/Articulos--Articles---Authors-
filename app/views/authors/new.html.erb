@@ -1,0 +1,53 @@
+<h1>Sign up</h1>
+
+<%= form_for(@author, :url => registration_path(@author), :html => { :multipart => true }) do |f| %>
+<% if @author.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@author.errors.count, "error") %> were encountered:</h2>
+
+      <ol>
+      <% @author.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ol>
+    </div>
+  <% end %>
+<ul id="form">
+  <li><%= f.label :email %>
+      <%= f.email_field :email %></li>
+
+  <li><%= f.label :password %>
+      <%= f.password_field :password %></li>
+
+  <li><%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %></li>
+  
+  <li><%= f.label :first_name %>
+        <%= f.text_field :first_name%></li>
+
+  <li><%= f.label :last_name %>
+        <%= f.text_field :last_name %></li>
+
+  <li><%= f.label :remarks %>
+        <%= f.text_area :remarks %></li>
+
+  <li>
+    <%= f.fields_for :place do |places| %>
+      <%= places.label 'Location' %>
+      <%= places.text_field :name %>
+     <% end %>
+  </li> 
+  
+  <li><%= f.label :birthday %>
+        <%= f.text_field :birthday, :readonly => 'readonly' %></li>
+        
+  <li><%= f.label :photo %>
+      <%= f.file_field :photo%></li>  
+
+  <li><%= f.submit "Sign up" %></li>
+   
+</ul>
+
+<% end %>
+
+

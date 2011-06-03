@@ -1,0 +1,28 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  body: MyText
+  status: MyText
+  date_posted: 2011-05-19 17:39:36
+
+two:
+  title: MyString
+  body: MyText
+  status: MyText
+  date_posted: 2011-05-19 17:39:36
+
+# == Schema Information
+#
+# Table name: articles
+#
+#  id          :integer(4)      not null, primary key
+#  title       :string(255)
+#  body        :text
+#  status      :text
+#  date_posted :datetime
+#  author_id   :integer(4)
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+

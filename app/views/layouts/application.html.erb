@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Articles &amp; Authors</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults, "http://maps.google.com/maps/api/js?sensor=true", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js" %>
+
+  <%= csrf_meta_tag %>
+</head>
+<body>
+<div id="nav-background"></div>
+<div class="container_12">
+  <div id="nav" class="grid_12">
+    <span id="logo">Articles <span id="ampersand">&amp;</span> Authors</span>
+    <ul>
+      <li><%= link_to 'Home', root_path %></li>
+      <li><%= link_to 'Articles', articles_path %></li>
+      <li><%= link_to 'Authors', authors_path %></li>
+      <li><%= link_to 'Sign Out', destroy_author_session_path, :id => "sign-out" if author_signed_in? %></li>
+    </ul>
+  </div>
+  <div id="container" class="grid_12">
+<%= yield %>
+  </div>
+</div>
+</body>
+</html>

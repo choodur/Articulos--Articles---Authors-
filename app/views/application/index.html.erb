@@ -1,0 +1,25 @@
+<% if not author_signed_in? %>
+<h1>Welcome!</h1>
+
+<p>
+Want to write? Why not? In the spirit of Lorem Ipsum Dolores... 
+
+
+</p>
+
+<%= form_for("author", :url => author_session_path) do |f| %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <%= f.check_box :remember_me %>
+  <%= f.label :remember_me %>
+  <%= f.submit 'Sign in' %>
+  <%= link_to "Forgot your password?", new_password_path('author') %>
+<% end %>
+Do you want to be an author? Then <%= link_to 'sign up now!', new_author_path %>
+<% else %>
+
+<%= link_to "View Profile",  author_path(current_author.id) %>
+<%= link_to "Write an Article",  new_article_path %>
+<% end %>

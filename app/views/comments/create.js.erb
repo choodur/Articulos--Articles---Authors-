@@ -1,0 +1,13 @@
+<% if @comment.errors.any? %>
+alert("Hi");
+var msg = ""
+  <% @author.errors.full_messages.each do |msg| %>
+msg += "<%= msg %>";
+  <% end %>
+alert(msg);
+<% else %>
+
+$('.comment-list').html("<%= escape_javascript(render :partial => 'list' ) %>").hide().fadeIn();
+$('.comment-list ul li:last').focus();
+
+<% end %>

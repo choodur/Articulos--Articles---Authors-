@@ -1,0 +1,15 @@
+<% num = 1 %>
+<ul>
+  <% @comments.each do |c| %>
+    <li>
+      <span class="comment-email"><%= c.email%> </span>says:<br/>
+      <span class="full-date"><%= c.comment_date %></span><br/>
+      <p><%= truncate(c.body, :length => 100) %></p><br/>
+      
+      <%= link_to 'View More', article_comment_path(@article, c) %> |
+      <%= link_to 'Edit', edit_article_comment_path(@article, c), :id => "edit-comment-#{num}" %> |
+      <%= link_to 'Delete', article_comment_path(@article, c), :confirm => 'Are you sure?', :method => :delete, :id => "delete-comment-#{num}"  %>
+     </li>
+    <% num += 1 %>
+  <% end %>
+</ul>

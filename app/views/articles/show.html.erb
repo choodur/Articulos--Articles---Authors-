@@ -1,0 +1,33 @@
+<h1><%= @article.title%></h1>
+
+<p>
+  <ul id="article-info">
+  <li><span>Author:</span> <%= link_to @author.full_name, author_path(@author) %></li>
+  <li class="full-date"><%= "Date Posted: #{@article.date_posted}" if @article.date_posted != nil %></li>
+  <li><span>Summary:</span> <p><%= @article.body %></p></li>
+  <li><span>Status:</span> <%= @article.status %></li>
+  
+ 
+  </ul>
+  <% if current_author.eql? @author %>
+  <%= link_to 'Edit', edit_article_path(@article) %> |
+  <%= link_to 'Delete', @article, :confirm => 'Are you sure?', :method => :delete %>
+  <% end %>
+   
+  
+</p>
+
+<%if not @comments.empty? %>
+<br/>
+<h3>Comments</h3>
+<%= link_to 'Add a comment', "#comment-form", :id => "add-comment" %>
+<br/>
+<div class="comment-list">
+  <%= render :partial => 'comments/list'%>   
+</div>
+<% else %>
+<div class="comment-list">
+  <p>No comments yet. Be the first to <%= link_to 'add a comment', "#comment-form", :id => "add-comment" %></p>
+</div>
+<% end %>
+<%= render :partial => 'comments/newform' %>  

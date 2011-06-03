@@ -1,0 +1,5 @@
+<div id="comment-form">
+<%= form_for @comment, :as => :comment, :url => article_comments_path(@article), :remote => true do |f| %>
+<%= render :partial => 'comments/form',  :locals => { :f => f } %>
+<% end %>
+</div> 

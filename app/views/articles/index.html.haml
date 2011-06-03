@@ -1,0 +1,12 @@
+%h1 Articles
+- if @authors.empty?
+%p There are no authors yet. Please 
+= link_to 'add one', new_author_path
+- else
+- if @articles.empty?
+%p There are no articles yet
+- else
+%ul#main-list
+@articles.each do |article|
+= link_to article.title, article
+= link_to 'Add new article', new_article_path if author_signed_in?

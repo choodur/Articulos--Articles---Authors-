@@ -1,0 +1,13 @@
+  <% if @comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being published:</h2>
+
+      <ol>
+      <% @comment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ol>
+    </div>
+  <% end %>
+  
+  from: form.html.erb comments

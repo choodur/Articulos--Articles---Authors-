@@ -1,0 +1,48 @@
+<h1><%= @author.full_name %></h1>
+<%= image_tag @author.photo.url(:small), :class => "photo-small"%>
+<ul>
+  <%if @author.remarks != "" %>
+  <li>Remarks:
+    <p>
+      <%= @author.remarks %>
+    </p> 
+  </li>
+  <%end%>
+  <%if @author.birthday != nil %>
+  <li>Birthday: <%= @author.birthday %></li>
+  <% end %>
+  
+  <% if not @author.articles.nil? %>
+  <ul>Articles from <%= @author.first_name %>:
+    <% @author.articles.each do |a|%>
+      <li><%= link_to a.title, article_path(a) %></li>
+    <% end %>
+  </ul>
+  <% else %>
+    <%= @author.first_name %> has not yet written any articles.
+  <% end %>
+</ul>
+ <% if current_author.eql? @author %>
+ <%= link_to 'Edit', edit_author_path(@author) %>
+  <%= link_to 'Delete', @author, :confirm => 'Are you sure?', :method => :delete %>
+
+<% end %>
+
+
+<% if not @author.place.nil? %>
+<div>
+    <div id="map_canvas" style="width: 500px; height: 500px; margin: auto;"></div>
+</div>
+
+<script type="text/javascript">
+  initialize(<%= @author.place.latitude %>, <%= @author.place.longitude%>, "<%= @author.place.name %>")
+
+</script>
+<% end %>
+
+
+
+
+
+
+

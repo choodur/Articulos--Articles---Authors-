@@ -1,0 +1,42 @@
+<%= form_for(@author) do |f| %>
+  <% if @author.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@author.errors.count, "error") %> were encountered:</h2>
+
+      <ol>
+      <% @author.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ol>
+    </div>
+  <% end %>
+  <div id="flash"><%= flash[:error] if flash[:error] %></div>
+  <ul id="form">
+      <li><%= f.label :first_name %>
+          <%= f.text_field :first_name%></li>
+
+  
+  
+
+    <li><%= f.label :last_name %>
+        <%= f.text_field :last_name %></li>
+
+
+    <li><%= f.label :remarks %>
+        <%= f.text_area :remarks %></li>
+
+
+    <li><%= f.label :birthday %>
+        <%= f.text_field :birthday %></li>
+        
+    <li>
+      <%= f.fields_for :place do |place| %>
+      <%= place.label 'Location' %>
+      <%= place.text_field :name %>
+     <% end %>
+    </li>
+
+
+    <li><%= f.submit %></li>
+  </ul>
+<% end %>

@@ -1,0 +1,11 @@
+
+  <%= flash[:error] if flash[:error] %>
+  <ul>
+    <li><%= f.label :email %>
+        <%= f.text_field :email%></li>
+
+    <li><%= f.label :body %>
+        <%= f.text_area :body %></li>
+
+    <li><%= f.submit %></li>
+  </ul>

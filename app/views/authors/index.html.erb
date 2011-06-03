@@ -1,0 +1,12 @@
+<h1>Authors</h1>
+
+<%if @authors.empty? %>
+   There are no authors yet. Be the first to <%= link_to "sign up!", new_author_registration_path%>
+<% else %>
+<ul id="main-list">
+<% @authors.each do |author| %>
+  <li><%= image_tag author.photo.url(:thumb), :class => "photo-thumb" %> <%= link_to author.full_name, author %></li>
+<% end %>
+</ul>
+
+<% end %>
