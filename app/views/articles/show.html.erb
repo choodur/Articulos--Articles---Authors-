@@ -17,17 +17,29 @@
   
 </p>
 
+
+
 <%if not @comments.empty? %>
 <br/>
-<h3>Comments</h3>
-<%= link_to 'Add a comment', "#comment-form", :id => "add-comment" %>
+<h3>Comments</h3> 
+<%= link_to 'Add a comment', "#comment-form", :id => "add-comment" if author_signed_in? %>
 <br/>
 <div class="comment-list">
   <%= render :partial => 'comments/list'%>   
 </div>
 <% else %>
 <div class="comment-list">
-  <p>No comments yet. Be the first to <%= link_to 'add a comment', "#comment-form", :id => "add-comment" %></p>
+  <% if author_signed_in? %>
+  <p>No comments yet. Be the first to <%= link_to 'add a comment', "#comment-form", :id => "add-comment"%></p>
+  <% end %>
 </div>
 <% end %>
+
+<% if not author_signed_in? %>
+  Please <%= link_to 'log in', root_path %> to post a comment. Not yet a member? Sign up <%= link_to 'here', new_author_path %>!
+<% end %>
 <%= render :partial => 'comments/newform' %>  
+
+
+
+

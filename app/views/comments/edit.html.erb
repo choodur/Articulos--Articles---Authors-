@@ -1,5 +1,7 @@
 <h1>Edit Comment</h1>
-
+<script type="text/javascript">
+$(function(){$("#comment-form").fadeIn();});
+</script>
 <%= form_for @comment, :as => :comment, :url => { :action => :update} do |f| %>
 <%= render :partial => 'form',  :locals => { :f => f } %>
 <% end %>

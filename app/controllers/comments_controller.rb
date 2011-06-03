@@ -20,7 +20,10 @@ class CommentsController < ApplicationController
   
   def create
     @comment = @article.comments.build (params[:comment])
+    @comment.author = current_author
+    
     @comments = @article.comments
+    
     respond_to do |format|
       if @comment.save
         format.html { redirect_to article_path @article } 

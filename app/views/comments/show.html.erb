@@ -1,10 +1,12 @@
-<h1>Comment for <%= @article.title %></h1>
-From: <span><%= @comment.email%></span><br/>
-Posted on:      <span><%= @comment.comment_date %></span><br/>
-      <span><%= @comment.body%></span><br/>
+<h1><small>Comment for </small><%= @article.title %></h1>
+From: <span><%= link_to @comment.author.email, author_path(@comment.author)%></span><br/>
+      <span class="full-date">Posted on: <%= @comment.comment_date %></span><br/>
+      <p class="comment-body"><%= @comment.body%></p><br/>
 
 <ul>
-<li><%= link_to 'Back', article_path(@article) %></li>
-<li><%= link_to 'Edit', edit_article_comment_path(@article, @comment) %></li>
-      <li><%= link_to 'Delete', article_comment_path(@article, @comment), :confirm => 'Are you sure?', :method => :delete %></li>
-     </ul>
+  <li><%= link_to 'Back', article_path(@article) %></li>
+<% if @comment.author.eql? current_author %>
+  <li><%= link_to 'Edit', edit_article_comment_path(@article, @comment) %></li>
+  <li><%= link_to 'Delete', article_comment_path(@article, @comment), :confirm => 'Are you sure?', :method => :delete %></li>
+<% end %>
+</ul>

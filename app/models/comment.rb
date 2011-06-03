@@ -1,8 +1,9 @@
 class Comment < ActiveRecord::Base
   belongs_to :article, :foreign_key =>"article_id"
+  belongs_to :author
   
-  validates_presence_of :email, :body
-  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[\w]{2,})\Z/i
+  validates_presence_of :body
+  #validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[\w]{2,})\Z/i
   before_create :time_in
   
   cattr_reader :per_page

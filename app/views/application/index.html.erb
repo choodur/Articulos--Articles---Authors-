@@ -1,9 +1,11 @@
 <% if not author_signed_in? %>
-<h1>Welcome!</h1>
+<h1 id="welcome">Welcome!</h1>
 
+
+<blockquote id="quote">"Writing is only boring to the people who are boring themselves." – Unknown</blockquote>
+<div id="index-page">
 <p>
 Want to write? Why not? In the spirit of Lorem Ipsum Dolores... 
-
 
 </p>
 
@@ -18,6 +20,7 @@ Want to write? Why not? In the spirit of Lorem Ipsum Dolores...
   <%= link_to "Forgot your password?", new_password_path('author') %>
 <% end %>
 Do you want to be an author? Then <%= link_to 'sign up now!', new_author_path %>
+</div>
 <% else %>
 
 <%= link_to "View Profile",  author_path(current_author.id) %>

@@ -4,11 +4,14 @@ class Author < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  geo_mappable
-
+  #custom gems
+  geo_mappable 
+  order_me "last_name"
+  
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :photo, :birthday, :remarks, :place
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :photo, :birthday, :remarks, :place_attributes
   has_many :articles, :dependent => :destroy
+  has_many :comments
   has_attached_file :photo, :styles => { :thumb=> "30x30>", :small  => "250x250>" }, :default_url => 'missing_:style.png'
   validates_presence_of :first_name, :last_name
   

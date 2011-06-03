@@ -1,9 +1,9 @@
 <h1>Articles</h1>
 
-<%if @authors == [] %>
-  <p> There are no authors yet. Please <%= link_to 'add one', new_author_path %></p>
+<%if @authors.empty? %>
+  <%= render :partial => 'authors/noauthors' %>
 <% else %>
-  <% if @articles == [] %>
+  <% if @articles.empty? %>
     <p>There are no articles yet</p>
   <% else %>
   <ul id="main-list">

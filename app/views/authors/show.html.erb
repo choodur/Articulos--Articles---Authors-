@@ -1,42 +1,46 @@
 <h1><%= @author.full_name %></h1>
+<div class="grid_3">
 <%= image_tag @author.photo.url(:small), :class => "photo-small"%>
-<ul>
+ <% if current_author.eql? @author %>
+ <ul>
+ <li><%= link_to 'Edit Profile', edit_author_path(@author) %></li>
+  <li><%= link_to 'Delete Profile', @author, :confirm => 'Are you sure?', :method => :delete %></li>
+</ul>
+<% end %>
+</div>
+<div class="grid_5">
+<ul  id="author-info">
   <%if @author.remarks != "" %>
-  <li>Remarks:
+  <li><span>I am:</span>
     <p>
       <%= @author.remarks %>
     </p> 
   </li>
   <%end%>
   <%if @author.birthday != nil %>
-  <li>Birthday: <%= @author.birthday %></li>
+  <li><span>I was born on:</span> <%= @author.birthday %></li>
   <% end %>
-  
+  <li>
   <% if not @author.articles.nil? %>
-  <ul>Articles from <%= @author.first_name %>:
+  <span>I have written:</span>
+  <ul>
     <% @author.articles.each do |a|%>
       <li><%= link_to a.title, article_path(a) %></li>
     <% end %>
   </ul>
   <% else %>
-    <%= @author.first_name %> has not yet written any articles.
-  <% end %>
-</ul>
- <% if current_author.eql? @author %>
- <%= link_to 'Edit', edit_author_path(@author) %>
-  <%= link_to 'Delete', @author, :confirm => 'Are you sure?', :method => :delete %>
-
-<% end %>
-
+    I have not yet written any articles.
+  <% end %></li>
 
 <% if not @author.place.nil? %>
-<div>
+<li><span>You can find me at:</span>
     <div id="map_canvas" style="width: 500px; height: 500px; margin: auto;"></div>
+</li>
+</ul>
 </div>
 
 <script type="text/javascript">
-  initialize(<%= @author.place.latitude %>, <%= @author.place.longitude%>, "<%= @author.place.name %>")
-
+  initialize(<%= @author.place.latitude %>, <%= @author.place.longitude%>, "<%= @author.place.location %>")
 </script>
 <% end %>
 

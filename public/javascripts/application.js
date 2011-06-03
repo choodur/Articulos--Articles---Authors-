@@ -13,6 +13,15 @@ $(function() {
   $("#add-comment").click(function(){
     $commentForm.fadeIn();
   });
+  
+  $("#welcome").hide();
+  $("#quote").hide();
+  $("#index-page").hide();
+  
+  $("#welcome").fadeIn(3000);
+  $("#quote").fadeIn(5000);
+  $("#index-page").fadeIn(8000);
+  
 });
 
 var map;

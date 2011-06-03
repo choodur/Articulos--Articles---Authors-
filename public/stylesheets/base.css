@@ -61,6 +61,15 @@ label {
   height:40px;
 
 }
+
+blockquote {
+   -moz-border-radius: 8px 8px 8px 8px;
+    background: none repeat scroll 0 0 #fdfdfd;
+    border: 1px solid #fdfdfd;
+    margin: 50px;
+    padding: 30px;
+    text-align: center;
+}
 /*******************************Logo*************************************/
 
 #logo {
@@ -136,12 +145,13 @@ label {
   font-size:14px;
 }
 
-.comment-list ul li, #article-info li p {
+.comment-list ul li, #article-info li p, .comment-body {
   border: 1px solid #C79B6A;
+  background: #fdfdfd;
   padding: 10px;
   margin: 8px 0;
-  background: #fdfdfd;
 }
+
 
 #form {
   text-align: top;
@@ -164,21 +174,32 @@ label {
   height:40px;
   padding: 14px 0 0 14px;
   background: #f5f5f5;
-  -moz-box-shadow: 1px 1px 2px #555;
+  -moz-box-shadow: 0px 1px 2px #555;
 }
 
 #main-list li:hover{
-  border-bottom: 1px solid #E1E1E1;
+ background: #eee;
+/*  border-bottom: 1px solid #E1E1E1;
   margin: 2px;
-  background: #eee;
-  -moz-box-shadow: none;
+ 
+  -moz-box-shadow: none;*/
   
 }
 
-#article-info li span {
+#article-info li span{
   display: inline-block;
   width:90px;
   font-size: 13px;
+}
+
+#author-info li span {
+  display: inline-block;
+  width:150px;
+  font-size: 15px;
+}
+
+#author-info li{
+  margin:10px;
 }
 
 .full-date {
@@ -200,7 +221,25 @@ label {
 
 #map_canvas { 
   height: 100%; 
-  border:10px solid #395AAA;
-  -moz-border-radius: 8px;
-  -webkit-border-radius: 8px;
+  border: 5px solid #A87C4F;
 }
+
+/*******************************FORMS*************************************/
+
+/*******************************Comment*************************************/
+
+#comment-form {
+  margin: 0;
+  padding: 0;
+  text-align:center;
+}
+
+#comment-form-body {
+  width: 99%;
+  height: 100px;
+  display: block;
+}
+
+
+
+

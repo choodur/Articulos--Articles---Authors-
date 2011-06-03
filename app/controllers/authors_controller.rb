@@ -1,4 +1,5 @@
 class AuthorsController < ApplicationController
+  before_filter :authenticate_author!, :except => [:index, :show, :new]
 
   def index
     @authors = Author.all
@@ -26,19 +27,12 @@ class AuthorsController < ApplicationController
 
   def edit
     @author = Author.find params[:id]
-    @author.build_place
+    @author.build_place if @author.place.nil?
   end
 
   def create
     @author = Author.new(params[:author])
-    @place = Place.new(params[:place])
-    @place.save!
-    @author.place = @place
-    
 
-
-    
-    
     respond_to do |format|
       if @author.save
         format.html { redirect_to(@author, :notice => 'Author was successfully added.') }
@@ -55,7 +49,7 @@ class AuthorsController < ApplicationController
    # @place.name = params[:place_attributes][:name]
    # @place.author_id = @author.id
    # @place.save
-    @author.build_place
+    #@author.build_place
     respond_to do |format|
       if @author.update_attributes(params[:author])
         format.html { redirect_to(@author, :notice => 'Author was successfully added.') }

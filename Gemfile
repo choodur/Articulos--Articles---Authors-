@@ -18,7 +18,7 @@ gem 'paperclip', '~>2.3'
 gem 'jquery-rails'
 gem 'will_paginate'
 gem 'annotate'
-gem 'geomap', '0.0.9'
+gem 'geomap', '0.0.10'
 #gem 'haml-rails'
 
 #gem 'calendar_date_select', :git => 'http://github.com/paneq/calendar_date_select.git', :branch => 'rails3test'

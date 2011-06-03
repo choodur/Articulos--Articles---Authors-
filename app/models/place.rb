@@ -7,7 +7,7 @@ class Place < ActiveRecord::Base
   before_save :set_latlng
   
   def set_latlng
-    self.latitude, self.longitude = Geomap.geocode(self.name)
+    self.latitude, self.longitude = Geomap.geocode(self.location)
   end
   
 end

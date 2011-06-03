@@ -12,11 +12,8 @@
   <% end %>
   <div id="flash"><%= flash[:error] if flash[:error] %></div>
   <ul id="form">
-      <li><%= f.label :first_name %>
+    <li><%= f.label :first_name %>
           <%= f.text_field :first_name%></li>
-
-  
-  
 
     <li><%= f.label :last_name %>
         <%= f.text_field :last_name %></li>
@@ -31,8 +28,8 @@
         
     <li>
       <%= f.fields_for :place do |place| %>
-      <%= place.label 'Location' %>
-      <%= place.text_field :name %>
+      <%= place.label :location %>
+      <%= place.text_field :location %>
      <% end %>
     </li>
 
