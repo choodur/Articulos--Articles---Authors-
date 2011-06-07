@@ -19,6 +19,7 @@ gem 'jquery-rails'
 gem 'will_paginate'
 gem 'annotate'
 gem 'geomap', '0.0.10'
+gem 'exception_notification', :require => 'exception_notifier'
 #gem 'haml-rails'
 
 #gem 'calendar_date_select', :git => 'http://github.com/paneq/calendar_date_select.git', :branch => 'rails3test'

@@ -38,5 +38,10 @@ module Mvcex
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+    
+    config.middleware.use ExceptionNotifier,
+    :email_prefix => "ApplicationName-Errors: ",
+    :sender_address => %w{tudorblink@gmail.com},
+    :exception_recipients => %w{tudorblink@gmail.com}
   end
 end

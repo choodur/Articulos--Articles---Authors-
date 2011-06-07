@@ -70,6 +70,7 @@ GEM
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    exception_notification (2.4.0)
     factory_girl (2.0.0.beta2)
     ffi (1.0.9)
     geomap (0.0.10)
@@ -159,6 +160,7 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   devise
+  exception_notification
   factory_girl_rails!
   geomap (= 0.0.10)
   jquery-rails

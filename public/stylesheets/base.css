@@ -4,7 +4,7 @@
 }*/
 
 body {
-  background: #eee;
+  background: #eee /*url('../images/bckg.gif') repeat*/;
   font-family: Georgia
 }
 
@@ -14,7 +14,8 @@ a {
 }
 
 a:hover {
-  color: #8DC73D;
+  color: #444;
+  border-bottom: 1px solid #A87C4F;
 }
 
 h1, h2, h3 {
@@ -38,21 +39,24 @@ input[type=text], select, textarea, input[type=email], input[type=password] {
   font-size:12px;
 } 
  
-input[type=submit] {
+input[type=submit], input[type=submit]:active {
   border: 1px solid #C79B6A;
-  margin:5px;
   padding:4px;
   background: #fff;
-  color: #C79B6A;
-  -moz-box-shadow: 2px 2px 2px #555;
   cursor: pointer;
   font-size: 14px;
-}
-
-input[type=submit]:hover{
   margin: 7px 5px 5px 7px;
   color:#5F3915;
   -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+}
+
+input[type=submit]:hover{
+  margin:5px;
+  color: #C79B6A;
+  -moz-box-shadow: 2px 2px 2px #555;
+  -webkit-box-shadow: 2px 2px 2px #555;
+  
 }
 
 label {
@@ -220,8 +224,10 @@ blockquote {
 }
 
 #map_canvas { 
-  height: 100%; 
   border: 5px solid #A87C4F;
+  width: 500px; 
+  height: 500px; 
+  margin: auto;"
 }
 
 /*******************************FORMS*************************************/

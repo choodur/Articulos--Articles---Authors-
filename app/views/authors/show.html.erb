@@ -21,7 +21,7 @@
   <li><span>I was born on:</span> <%= @author.birthday %></li>
   <% end %>
   <li>
-  <% if not @author.articles.nil? %>
+  <% if not @author.articles.empty? %>
   <span>I have written:</span>
   <ul>
     <% @author.articles.each do |a|%>
@@ -34,7 +34,7 @@
 
 <% if not @author.place.nil? %>
 <li><span>You can find me at:</span>
-    <div id="map_canvas" style="width: 500px; height: 500px; margin: auto;"></div>
+    <div id="map_canvas"></div>
 </li>
 </ul>
 </div>
@@ -43,10 +43,3 @@
   initialize(<%= @author.place.latitude %>, <%= @author.place.longitude%>, "<%= @author.place.location %>")
 </script>
 <% end %>
-
-
-
-
-
-
-

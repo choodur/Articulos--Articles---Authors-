@@ -16,8 +16,13 @@
       <li><%= link_to 'Home', root_path %></li>
       <li><%= link_to 'Articles', articles_path %></li>
       <li><%= link_to 'Authors', authors_path %></li>
-      <li><%= link_to 'Log In', new_author_session_path, :id => "sign-out" if not author_signed_in? %></li>
-      <li><%= link_to 'Sign Out', destroy_author_session_path, :id => "sign-out" if author_signed_in? %></li>
+      <li>
+      <% if not author_signed_in? %>
+      <%= link_to 'Log In', new_author_session_path, :id => "sign-out" %>
+      <% else %>
+      <%= link_to 'Sign Out', destroy_author_session_path, :id => "sign-out" %>
+      <% end %>
+      </li>
     </ul>
   </div>
   <div id="container" class="grid_12">

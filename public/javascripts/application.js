@@ -18,9 +18,9 @@ $(function() {
   $("#quote").hide();
   $("#index-page").hide();
   
-  $("#welcome").fadeIn(3000);
-  $("#quote").fadeIn(5000);
-  $("#index-page").fadeIn(8000);
+  $("#welcome").fadeIn(1000);
+  $("#quote").fadeIn(1000);
+  $("#index-page").fadeIn(1000);
   
 });
 
@@ -33,16 +33,16 @@ var infowindow = new google.maps.InfoWindow();
 function initialize(lat, lng, add) {
   var latlng = new google.maps.LatLng(lat, lng);
   var options = {
-    zoom: 3,
+    zoom: 15,
     center: latlng,
-    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    mapTypeId: google.maps.MapTypeId.SATELLITE,
   }
   
   map = new google.maps.Map(document.getElementById("map_canvas"), options);
     
   var marker = new google.maps.Marker({
       position: latlng,
-      draggable: true,
+      //draggable: true,
       position: latlng
   });
   
