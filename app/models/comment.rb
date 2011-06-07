@@ -1,6 +1,6 @@
 class Comment < ActiveRecord::Base
   belongs_to :article, :foreign_key =>"article_id"
-  belongs_to :author
+  belongs_to :author, :foreign_key =>"author_id"
   
   validates_presence_of :body
   #validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[\w]{2,})\Z/i
