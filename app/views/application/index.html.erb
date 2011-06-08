@@ -22,7 +22,13 @@ Want to write? Why not? In the spirit of Lorem Ipsum Dolores...
 Do you want to be an author? Then <%= link_to 'sign up now!', new_author_path %>
 </div>
 <% else %>
-
-<%= link_to "View Profile",  author_path(current_author.id) %>
-<%= link_to "Write an Article",  new_article_path %>
+<h1 id="welcome">Welcome <%= current_author.first_name%>!</h1>
+<p>What do you want to do?</p>
+<ul>
+  <li><%= link_to "View my Profile",  author_path(current_author.id), :class => 'links' %></li>
+  <li><%= link_to "Write an Article",  new_article_path, :class => 'links' %></li>
+  <li><%= link_to "View my Articles",  list_articles_path, :class => 'links' %></li>
+  <li><%= link_to "Stalk other Authors",  authors_path, :class => 'links' %></li>
+  <li><%= link_to "Read more Articles",  articles_path, :class => 'links' %></li>
+</ul>
 <% end %>

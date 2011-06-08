@@ -1,0 +1,8 @@
+$('body').append("<%= escape_javascript(render :partial => 'form')%>");
+$('#login-form').fadeIn();
+$('.container_12').css("opacity", "0.5"); 
+$("#login-form-close").click(function(){
+  $('.container_12').css("opacity", "1"); 
+  $("#login-form").fadeOut(1000).remove();
+
+});

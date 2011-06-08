@@ -4,7 +4,7 @@
   <ul id="article-info">
   <li><span>Author:</span> <%= link_to @author.full_name, author_path(@author) %></li>
   <li class="full-date"><%= "Date Posted: #{@article.date_posted}" if not @article.date_posted.nil? %></li>
-  <li><span>Summary:</span> <p><%= @article.body %></p></li>
+  <li><span>Summary:</span> <%= @article.body.html_safe %></li>
   
  
   </ul>

@@ -43,5 +43,8 @@ module Mvcex
     :email_prefix => "ApplicationName-Errors: ",
     :sender_address => %w{tudorblink@gmail.com},
     :exception_recipients => %w{tudorblink@gmail.com}
+    
+    config.autoload_paths += %W( #{config.root}/app/models/ckeditor )
+
   end
 end

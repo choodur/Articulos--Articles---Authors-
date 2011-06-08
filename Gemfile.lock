@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/galetahub/rails-ckeditor.git
+  revision: c2fbccafd864b35f173b72fa64dbb880a23532e7
+  branch: rails3
+  specs:
+    ckeditor (3.5.4)
+      mime-types (>= 1.16)
+
+GIT
   remote: git://github.com/thoughtbot/factory_girl_rails.git
   revision: 8a421148bf70577b1c944f8494bf37295c44b06e
   specs:
@@ -156,6 +164,7 @@ DEPENDENCIES
   annotate
   cancan
   capybara
+  ckeditor!
   cucumber
   cucumber-rails
   database_cleaner

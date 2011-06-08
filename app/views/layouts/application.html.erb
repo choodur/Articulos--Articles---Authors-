@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Articles &amp; Authors</title>
+  <title>&raquo; Articles &amp; Authors</title>
   <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults, "http://maps.google.com/maps/api/js?sensor=true", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js" %>
+  <%= javascript_include_tag 'jquery', 'jquery.min', 'jquery_ujs', "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js", 'application'  %>
+  <%= javascript_include_tag :ckeditor %>
 
   <%= csrf_meta_tag %>
 </head>
@@ -39,7 +40,7 @@
       </li>
       <li>
       <% if not author_signed_in? %>
-      <%= link_to 'Log In', new_author_session_path, :id => "sign-out" %>
+      <%= link_to 'Log In', new_author_session_path, :id => "sign-out", :remote => true %>
       <% else %>
       <%= link_to 'Sign Out', destroy_author_session_path, :id => "sign-out" %>
       <% end %>

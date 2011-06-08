@@ -4,7 +4,7 @@
 }*/
 
 body {
-  background: #eee; /*url('../images/bckg.gif') repeat;
+  background: #F2F1F0; /*url('../images/bckg.gif') repeat;
   background: -moz-linear-gradient(top, #fdfdfd, #eee);
   background: -webkit-linear-gradient(linear, center top, center bottom, from(#e1e1e1), to(#eee));*/
   font-family: Georgia
@@ -26,8 +26,8 @@ h1, h2, h3 {
   border-bottom: 1px solid #A87C4F;
   color: #5F3915;
   background: #e1e1e1;
-  background: -moz-linear-gradient(top, #eee, #e1e1e1);
-  background: -webkit-linear-gradient(linear, center top, center bottom, from(#e1e1e1), to(#eee));
+  background: -moz-linear-gradient(top, #F2F1F0, #e1e1e1);
+  background: -webkit-linear-gradient(linear, center top, center bottom, from(#F2F1F0), to(#e1e1e1));
   padding:10px;
   
 }
@@ -133,8 +133,8 @@ blockquote {
   border-bottom: 1px solid #A87C4F;
   color: #5F3915;
   background: #e1e1e1;
-  background: -moz-linear-gradient(top, #eee, #e1e1e1);
-  background: -webkit-linear-gradient(linear, center top, center bottom, from(#eee), to(#e1e1e1));
+  background: -moz-linear-gradient(top, #F2F1F0, #e1e1e1);
+  background: -webkit-linear-gradient(linear, center top, center bottom, from(#F2F1F0), to(#e1e1e1));
   height: 80px;
   position:absolute;
   width:100%
@@ -317,6 +317,46 @@ blockquote {
   display: block;
 }
 
+/*******************************LogIn*************************************/
 
+#login-form {
+  border: 1px solid #C79B6A;
+  position: fixed;
+  z-index: 1000;
+  background: #fff;
+  display: none;
+  left: 50%;
+  margin-left: -310px;
+  position: fixed;
+  top: 15%;
+  width: 500px;
+  z-index: 1000;
+  padding:30px;
+  color: #444444;
+  -moz-box-shadow: 0 10px 10px #AAAAAA;
+  -webkit-box-shadow: 0 10px 10px #AAAAAA;
+  box-shadow: 0 10px 10px #AAAAAA;
+}
 
+#login-form-close {
+  display: block;
+  float: right;
+  font: bold 20px Helvetica, Arial, sans-serif;
+  margin: -20px;
+  color: #C79B6A;
+}
 
+#login-form-close:hover{
+  color: #5F3915;
+  text-decoration: none;
+}
+
+#login-form h2 {
+  background: #e1e1e1;
+  background: -moz-linear-gradient(top, #fff, #e1e1e1);
+  background: -webkit-linear-gradient(linear, center top, center bottom, from(#fff), to(#e1e1e1));
+}
+
+#new_author label, #author_new label {
+  width: 200px;
+}

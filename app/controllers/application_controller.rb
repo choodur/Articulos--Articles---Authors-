@@ -5,5 +5,6 @@ class ApplicationController < ActionController::Base
   
   def index
     #raise 'error'
+    @titulos = "Welcome!"
   end
 end
