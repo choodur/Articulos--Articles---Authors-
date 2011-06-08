@@ -9,5 +9,5 @@ alert(msg);
 
 $('.comment-list').html("<%= escape_javascript(render :partial => 'list' ) %>").hide().fadeIn();
 $('.comment-list ul li:last').focus();
-
+$('.comment_new')[0].reset();
 <% end %>

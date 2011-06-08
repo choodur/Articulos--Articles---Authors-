@@ -7,6 +7,9 @@ Mvcex::Application.routes.draw do
   resources :authors
   
   resources :articles do
+    collection do
+      get :list
+    end
     resources :comments
   end
   

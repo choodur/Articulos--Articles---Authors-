@@ -9,8 +9,15 @@ class Article < ActiveRecord::Base
   validates_inclusion_of :status, :in => VALID
   before_save :set_date_posted
   
+  scope :drafts, where(["status = ?", VALID[0]])
+  scope :posted, where(["status = ?", VALID[1]])
+  
   def set_date_posted
     self.date_posted = self.status.downcase == "posted" ? Time.now : nil
+  end
+  
+  def posted?
+    self.status == VALID[1] ? true : false; 
   end
   
 end

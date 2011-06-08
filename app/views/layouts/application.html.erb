@@ -14,8 +14,29 @@
     <span id="logo">Articles <span id="ampersand">&amp;</span> Authors</span>
     <ul>
       <li><%= link_to 'Home', root_path %></li>
-      <li><%= link_to 'Articles', articles_path %></li>
-      <li><%= link_to 'Authors', authors_path %></li>
+      <li>
+        <%= link_to 'Articles', articles_path %>
+        <% if author_signed_in? %>
+        <div class="sub-nav">
+          <ul>
+            <li><%= link_to 'All Articles', articles_path %></li>
+            <li><%= link_to 'My Articles', list_articles_path %></li>
+            <li><%= link_to 'Write an Article', new_article_path %></li>
+          </ul>
+        </div>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to 'Authors', authors_path %>
+        <% if author_signed_in? %>
+        <div class="sub-nav">
+          <ul>
+            <li><%= link_to 'All Authors', authors_path %></li>
+            <li><%= link_to 'My Profile', author_path(current_author) %></li>
+          </ul>
+        </div>
+        <% end %>
+      </li>
       <li>
       <% if not author_signed_in? %>
       <%= link_to 'Log In', new_author_session_path, :id => "sign-out" %>

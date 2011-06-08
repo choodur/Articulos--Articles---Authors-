@@ -2,8 +2,9 @@ class ArticlesController < ApplicationController
   before_filter :get_authors
 
   def index
-    @articles = Article.all
-    
+    #@articles = Article.all
+    #@drafts = Article.drafts
+    @posted = Article.posted
     respond_to do |format|
       format.html
       format.xml
@@ -63,6 +64,10 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(articles_url) }
     end
+  end
+  
+  def list
+    @articles = current_author.articles
   end
   
   def get_authors

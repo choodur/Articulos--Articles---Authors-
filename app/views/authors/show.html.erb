@@ -3,8 +3,9 @@
 <%= image_tag @author.photo.url(:small), :class => "photo-small"%>
  <% if current_author.eql? @author %>
  <ul>
- <li><%= link_to 'Edit Profile', edit_author_path(@author) %></li>
-  <li><%= link_to 'Delete Profile', @author, :confirm => 'Are you sure?', :method => :delete %></li>
+  <li><%= link_to 'Edit Profile', edit_author_path(@author), :class => "links" %></li>
+  <li><%= link_to 'Write Article', new_article_path, :class => "links" %></li>
+  <li><%= link_to 'Delete Profile', @author, :confirm => 'Are you sure?', :method => :delete, :class => "links" %></li>
 </ul>
 <% end %>
 </div>

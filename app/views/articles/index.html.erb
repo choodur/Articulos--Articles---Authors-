@@ -3,16 +3,19 @@
 <%if @authors.empty? %>
   <%= render :partial => 'authors/noauthors' %>
 <% else %>
-  <% if @articles.empty? %>
-    <p>There are no articles yet</p>
+ <%= link_to 'Write a new article', new_article_path,  :class => "links" if author_signed_in? %>
+  <% if @posted.empty? %>
+    <p>There are no articles yet.</p>
   <% else %>
+ 
+  
+  
   <ul id="main-list">
-  <% @articles.each do |article| %>
+    <% @posted.each do |article| %>
 
   
    <li><%= link_to article.title, article %></li>
    <% end %>
   </ul>
   <% end %>
-  <%= link_to 'Add new article', new_article_path if author_signed_in?%>
 <% end %>

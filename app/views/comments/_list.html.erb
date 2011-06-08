@@ -2,7 +2,7 @@
 <ul>
   <% @comments.each do |c| %>
     <li>
-      
+      <span><%= image_tag c.author.photo.url(:thumb), :class => "photo-thumb" %></span>
       <span class="comment-email"><%= link_to "#{c.author.last_name}, #{c.author.first_name}", author_path(c.author)%> </span>says:<br/>
       <span class="full-date"><%= c.comment_date %></span><br/>
       <p><%= truncate(c.body, :length => 100) %></p><br/>
@@ -10,7 +10,7 @@
       <%= link_to 'View More', article_comment_path(@article, c) %> 
       <% if c.author.eql? current_author %>
       <%= link_to 'Edit', edit_article_comment_path(@article, c), :id => "edit-comment-#{num}" %> 
-      <%= link_to 'Delete', article_comment_path(@article, c), :confirm => 'Are you sure?', :method => :delete, :id => "delete-comment-#{num}" %>
+      <%= link_to 'Delete', article_comment_path(@article, c), :confirm => 'Are you sure?', :method => :delete, :id => "delete-comment-#{num}", :remote => true %>
       <% end %>
      </li>
     <% num += 1 %>

@@ -5,7 +5,9 @@
 <% else %>
 <ul id="main-list">
 <% @authors.each do |author| %>
-  <li><%= image_tag author.photo.url(:thumb), :class => "photo-thumb" %> <%= link_to author.full_name, author %></li>
+  <% cid = "" 
+     cid = author.eql?(current_author) ? "current-author" : "" %>
+  <li><%= image_tag author.photo.url(:thumb), :class => "photo-thumb" %> <%= link_to author.full_name, author, :id => cid %></li>
 <% end %>
 </ul>
 

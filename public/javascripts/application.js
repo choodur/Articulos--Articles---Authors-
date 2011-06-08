@@ -12,6 +12,7 @@ $(function() {
   $commentForm.hide();
   $("#add-comment").click(function(){
     $commentForm.fadeIn();
+   // $(this).html("Hide form");
   });
   
   $("#welcome").hide();
@@ -21,6 +22,30 @@ $(function() {
   $("#welcome").fadeIn(1000);
   $("#quote").fadeIn(1000);
   $("#index-page").fadeIn(1000);
+  
+  $("#nav ul li:eq(1)").hover(
+  function()
+  {
+    $(this).find(".sub-nav").fadeIn();
+    $(this).find("a:eq(0)").css("border", "none");
+  },
+  function()
+  {
+    $(this).find(".sub-nav").fadeOut();
+    $(this).find("a:eq(0)").css("border-bottom", "1px solid #A87C4F");
+  });
+  
+  $("#nav ul li:eq(5)").hover(
+  function()
+  {
+    $(this).find(".sub-nav").fadeIn();
+    $(this).find("a:eq(0)").css("border", "none");
+  },
+  function()
+  {
+    $(this).find(".sub-nav").fadeOut();
+    $(this).find("a:eq(0)").css("border-bottom", "1px solid #A87C4F");
+  });
   
 });
 

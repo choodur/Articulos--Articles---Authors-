@@ -1,0 +1,15 @@
+<h1>My Articles</h1>
+
+ <%= link_to 'Write a new article', new_article_path,  :class => "links" if author_signed_in? %>
+  <% if @articles.empty? %>
+    <p>You have not yet written any articles.</p>
+  <% else %>
+  <ul id="main-list">
+    <% @articles.each do |article| %>
+      <% klass = "" 
+       klass = article.posted? ? "posted" : "draft" %>
+  
+   <li><%= link_to article.title, article, :class => klass %></li>
+   <% end %>
+  </ul>
+  <% end %>

@@ -54,10 +54,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-
-    respond_to do |format|
-      format.html { redirect_to article_path @article }
-    end
+    @comments = @article.comments
   end
   
   private
