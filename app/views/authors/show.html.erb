@@ -22,10 +22,10 @@
   <li><span>I was born on:</span> <%= @author.birthday %></li>
   <% end %>
   <li>
-  <% if not @author.articles.empty? %>
+  <% if not @author.articles.posted.empty? %>
   <span>I have written:</span>
   <ul>
-    <% @author.articles.each do |a|%>
+    <% @author.articles.posted.each do |a|%>
       <li><%= link_to a.title, article_path(a) %></li>
     <% end %>
   </ul>
