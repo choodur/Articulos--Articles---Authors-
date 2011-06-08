@@ -41,7 +41,7 @@
 </div>
 
 
-<%= javascript_include_tag 'gmap', "http://maps.google.com/maps/api/js?sensor=true" %>
+<%= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=true", 'gmap' %>
 <script type="text/javascript">
   initialize(<%= @author.place.latitude %>, <%= @author.place.longitude%>, "<%= @author.place.location %>")
 </script>
