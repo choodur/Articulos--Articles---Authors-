@@ -18,10 +18,15 @@
     </p> 
   </li>
   <%end%>
-  <%if @author.birthday != nil %>
+  <%if not @author.birthday.nil? %>
   <li><span>I was born on:</span> <%= @author.birthday %></li>
   <% end %>
   <li>
+  <%if not @author.email.nil? %>
+  <li><span>Contact me at:</span> <%= mail_to @author.email, @author.email %></li>
+  <% end %>
+  <li>
+  
   <% if not @author.articles.posted.empty? %>
   <span>I have written:</span>
   <ul>

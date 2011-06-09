@@ -5,10 +5,12 @@
 <% else %>
 <ul id="main-list">
 <% @authors.each do |author| %>
-  <% cid = "" 
-     cid = author.eql?(current_author) ? "current-author" : "" %>
-  <li><%= image_tag author.photo.url(:thumb), :class => "photo-thumb" %> <%= link_to author.full_name, author, :id => cid %></li>
+  <% curclass = "" 
+     curclass = author.eql?(current_author) ? "current-author" : "" %>
+  <li><%= image_tag author.photo.url(:thumb), :class => "photo-thumb" %> <%= link_to author.full_name, author, :class => curclass %></li>
 <% end %>
 </ul>
+<%= will_paginate @authors %>
 
+<div class="page-entry-info"><%= page_entries_info @authors %></div>
 <% end %>

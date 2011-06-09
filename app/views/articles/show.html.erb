@@ -4,7 +4,7 @@
   <ul id="article-info">
   <li><span>Author:</span> <%= link_to @author.full_name, author_path(@author) %></li>
   <li class="full-date"><%= "Date Posted: #{@article.date_posted}" if not @article.date_posted.nil? %></li>
-  <li><span>Summary:</span> <%= @article.body.html_safe %></li>
+  <li><span>Summary:</span> <div id="article-body"><%= @article.body.html_safe %></div></li>
   
  
   </ul>
@@ -35,9 +35,12 @@
 <% end %>
 
 <% if not author_signed_in? %>
-  Please <%= link_to 'log in', root_path %> to post a comment. Not yet a member? Sign up <%= link_to 'here', new_author_path %>!
+  Please <%= link_to 'log in', new_author_session_path, :remote => true %> to post a comment. Not yet a member? Sign up <%= link_to 'here', new_author_path %>!
+  
+<% else %>
+<%= render :partial => 'comments/newform' %>   
 <% end %>
-<%= render :partial => 'comments/newform' %>  
+ 
 
 
 

@@ -12,4 +12,7 @@
    <li><%= link_to article.title, article, :class => klass %></li>
    <% end %>
   </ul>
+  <%= will_paginate @articles %>
+
+  <div class="page-entry-info"><%= page_entries_info @articles %></div>
   <% end %>

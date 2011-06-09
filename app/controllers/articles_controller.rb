@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   def index
     #@articles = Article.all
     #@drafts = Article.drafts
-    @posted = Article.posted
+    @posted = Article.posted.paginate :page => params[:page], :per_page => 5
     respond_to do |format|
       format.html
       format.xml
@@ -67,7 +67,7 @@ class ArticlesController < ApplicationController
   end
   
   def list
-    @articles = current_author.articles
+    @articles = current_author.articles.paginate :page => params[:page], :per_page => 5
   end
   
   def get_authors

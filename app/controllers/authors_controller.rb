@@ -2,7 +2,7 @@ class AuthorsController < ApplicationController
   before_filter :authenticate_author!, :except => [:index, :show, :new]
 
   def index
-    @authors = Author.all
+    @authors = Author.paginate :page => params[:page], :order => 'created_at DESC', :per_page => 5
     
     respond_to do |format|
       format.html
@@ -45,11 +45,7 @@ class AuthorsController < ApplicationController
   
   def update
     @author = Author.find(params[:id])
-   # @place = Place.new
-   # @place.name = params[:place_attributes][:name]
-   # @place.author_id = @author.id
-   # @place.save
-    #@author.build_place
+
     respond_to do |format|
       if @author.update_attributes(params[:author])
         format.html { redirect_to(@author, :notice => 'Author was successfully added.') }

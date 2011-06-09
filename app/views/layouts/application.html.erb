@@ -50,6 +50,15 @@
   <div id="container" class="grid_12">
 <%= yield %>
   </div>
+  <% if author_signed_in? %>
+  <div id="whoami">
+    <span>&raquo; whoami?</span>
+  </div>
+  <div id="whoami-content">
+    <%= image_tag current_author.photo.url(:thumb) %>
+    <span><small>You are: </small><br/><%= link_to current_author.first_name, author_path(current_author)%></span>
+  </div>
+  <% end %>
 </div>
 </body>
 </html>

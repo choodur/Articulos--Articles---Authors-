@@ -7,15 +7,21 @@
   <% if @posted.empty? %>
     <p>There are no articles yet.</p>
   <% else %>
- 
-  
-  
+  <div id="search-form">
+ <% form_tag do  %>
+  <%= text_field_tag "article_name" %> 
+ <% end %>
+  </div>
+  <div class="clear"></div>
   <ul id="main-list">
-    <% @posted.each do |article| %>
-
-  
-   <li><%= link_to article.title, article %></li>
+    <% @posted.each do |article|
+          curclass = "" 
+          curclass = article.author.eql?(current_author) ? "current-author" : "" %>
+   <li><%= link_to article.title, article, :class => curclass %></li>
    <% end %>
   </ul>
+  <%= will_paginate @posted %>
+
+  <div class="page-entry-info"><%= page_entries_info @posted %></div>
   <% end %>
 <% end %>
