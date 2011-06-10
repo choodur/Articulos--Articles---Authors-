@@ -26,6 +26,7 @@ Do you want to be an author? Then <%= link_to 'sign up now!', new_author_path %>
 <p>What do you want to do?</p>
 <ul>
   <li><%= link_to "View my Profile",  author_path(current_author.id), :class => 'links' %></li>
+  <li><%= link_to "Edit Profile",  edit_author_path(current_author.id), :class => 'links' %></li>
   <li><%= link_to "Write an Article",  new_article_path, :class => 'links' %></li>
   <li><%= link_to "View my Articles",  list_articles_path, :class => 'links' %></li>
   <li><%= link_to "Stalk other Authors",  authors_path, :class => 'links' %></li>

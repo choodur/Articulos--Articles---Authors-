@@ -10,7 +10,9 @@
       </ol>
     </div>
   <% end %>
-  <div id="flash"><%= flash[:error] if flash[:error] %></div>
+  <% if flash[:error] %>
+  <div id="flash"><%= flash[:error] %></div>
+  <% end %>
   <ul id="form">
     <li><%= f.label :first_name %>
           <%= f.text_field :first_name%></li>
@@ -24,7 +26,7 @@
 
 
     <li><%= f.label :birthday %>
-        <%= f.text_field :birthday %></li>
+        <%= f.text_field :birthday, :readonly => "readonly" %></li>
         
     <li>
       <%= f.fields_for :place do |place| %>
