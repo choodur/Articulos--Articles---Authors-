@@ -1,8 +1,8 @@
 $('body').append("<%= escape_javascript(render :partial => 'fullcomment', :locals => { :c => @comment })%>");
-$('#login-form').fadeIn();
+$('#pop-box').fadeIn();
 $('.container_12').css("opacity", "0.5"); 
-$("#login-form-close").click(function(){
+$("#pop-box-close").click(function(){
   $('.container_12').css("opacity", "1"); 
-  $("#login-form").fadeOut(1000).remove();
+  $("#disable").fadeOut(1000).remove();
 
 });

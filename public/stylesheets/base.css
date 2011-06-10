@@ -399,7 +399,7 @@ blockquote {
 
 /*******************************LogIn*************************************/
 
-#login-form {
+#pop-box {
   border: 1px solid #C79B6A;
   position: fixed;
   z-index: 1000;
@@ -413,14 +413,14 @@ blockquote {
   z-index: 1000;
   padding:30px;
   color: #444444;
-  max-height: 400px;
+  max-height: 430px;
   overflow: auto;
   -moz-box-shadow: 0 10px 10px #AAAAAA;
   -webkit-box-shadow: 0 10px 10px #AAAAAA;
   box-shadow: 0 10px 10px #AAAAAA;
 }
 
-#login-form-close {
+#pop-box-close {
   display: block;
   float: right;
   font: bold 20px Helvetica, Arial, sans-serif;
@@ -428,15 +428,24 @@ blockquote {
   color: #C79B6A;
 }
 
-#login-form-close:hover{
+#pop-box-close:hover{
   color: #5F3915;
   text-decoration: none;
 }
 
-#login-form h2 {
+#pop-box h2 {
   background: #e1e1e1;
   background: -moz-linear-gradient(top, #fff, #e1e1e1);
   background: -webkit-gradient(linear, center top, center bottom, from(#fff), to(#e1e1e1));
+}
+
+#disable {
+  position: fixed;
+  z-index: 999;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
 }
 
 #new_author label, #author_new label {
@@ -454,3 +463,5 @@ blockquote {
   background: -moz-linear-gradient(top, #C79B6A, #603915);
   background: -webkit-gradient(linear, center top, center bottom, from(#C79B6A), to(#603915)); */
 }
+
+

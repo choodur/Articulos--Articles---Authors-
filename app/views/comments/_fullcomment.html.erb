@@ -1,7 +1,11 @@
-<div id="login-form">
-<%= link_to "X" ,"#login-form", :id => "login-form-close" %>
+<div id="disable">
+
+<div id="pop-box">
+<%= link_to "X" ,"#pop-box", :id => "pop-box-close" %>
 <span><%= image_tag c.author.photo.url(:thumb), :class => "photo-thumb" %></span>
       <span class="comment-email"><%= link_to "#{c.author.last_name}, #{c.author.first_name}", author_path(c.author)%> </span>says:<br/>
       <span class="full-date"><%= c.comment_date %></span><br/>
       <p><%= c.body %></p><br/>
+</div>
+
 </div>
